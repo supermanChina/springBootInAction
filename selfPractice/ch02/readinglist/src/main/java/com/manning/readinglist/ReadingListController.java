@@ -13,7 +13,7 @@ import java.util.List;
  * Created by Zhang Xiaochao on 9/13/2017.
  */
 @Controller
-@RequestMapping("/")
+@RequestMapping
 public class ReadingListController {
 
     private static final String reader = "craig";
@@ -23,6 +23,11 @@ public class ReadingListController {
     @Autowired
     public ReadingListController(ReadingListRepository readingListRepository) {
         this.readingListRepository = readingListRepository;
+    }
+
+    @RequestMapping("/")
+    public String home(){
+        return "readingList";
     }
 
     @RequestMapping(value = "/{reader}", method = RequestMethod.GET)
