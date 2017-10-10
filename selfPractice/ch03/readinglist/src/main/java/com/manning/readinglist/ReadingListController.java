@@ -25,6 +25,11 @@ public class ReadingListController {
         this.readingListRepository = readingListRepository;
     }
 
+    @RequestMapping("/login")
+    public String login(){
+        return "login";
+    }
+
     @RequestMapping(value = "/{reader}", method = RequestMethod.GET)
     public String readersBooks(@PathVariable("reader") String reader, Model model) {
 
